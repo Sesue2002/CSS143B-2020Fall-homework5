@@ -36,6 +36,7 @@ public class Problem3Test {
     public void testInOrderTraverse() {
         // homework
         // to verify inOrderTraverse(TreeNode<Integer> node)
+
     }
 
     private static List<Integer> inOrderTraverse(TreeNode<Integer> node) {
@@ -146,9 +147,23 @@ public class Problem3Test {
         //    N   N
         // homework
         // what problem can you see for insertInBst from this test case?
-        // answer:
+        // answer: We just add values greater, creating a tree that goes like this
+        /*
+                 1
+                  \
+                   2
+                    \
+                     3
+                      \
+                       4
+                        \
+                         5
+         */
+        // Which results in more and more recursion and space. Effectively slowing down the speed at which we can search at.
         // discuss how you would solve it in a comment below
-        // answer:
+        // answer: how i would solve it would be creating a new tree for example after like 20 nodes that are only greater than the root
+        // i would create a new tree from then on. Like a tree within a tree. So if a value is from 1 - 20 then it looks in the first tree.
+        // if its greater then its in the other tree. Splitting the time so we can just jump to a certain tree. Like arrays.
         root = new TreeNode<>(1);
         testCases.add(new BSTTestCase<>(root, 2, Arrays.asList(1, 2)));
         testCases.add(new BSTTestCase<>(root, 3, Arrays.asList(1, 2, 3)));
