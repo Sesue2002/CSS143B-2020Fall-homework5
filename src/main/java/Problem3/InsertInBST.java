@@ -4,7 +4,7 @@ import Problem1.TreeNode;
 
 public class InsertInBST {
     public static void insert(TreeNode<Integer> root, int valToInsert) {
-        // homework
+        // homework final
         insertHelp(root, valToInsert);
     }
     private static TreeNode<Integer> insertHelp(TreeNode<Integer> root, int vTI){
