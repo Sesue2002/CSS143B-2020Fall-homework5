@@ -16,19 +16,30 @@ public class LevelOrderTraverse {
         if(root == null){
             return result;
         }
+
         q.add(root);
 
         TreeNode<Integer> current;
 
-        while(!q.isEmpty()){
-            current = q.poll();
+        while(!q.isEmpty() && root != null){
+            int s = q.size();
+            for(int i = 0; i < s; i++) {
+                current = q.poll();
 
-            intVals.add(current.val);
-            if (current.left != null){
-                q.add(current.right);
+                intVals.add(current.val);
+
+                if (current.left != null) {
+                    q.add(current.left);
+                }
+
+                if (current.right != null) {
+                    q.add(current.right);
+                }
             }
+            result.add(new ArrayList<>(intVals));
+            intVals.clear();
         }
 
-        return result;  // place holder
+        return result;
     }
 }
